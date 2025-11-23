@@ -31,3 +31,54 @@ async function bootstrap() {
 }
 
 bootstrap();
+
+
+
+// import { NestFactory } from '@nestjs/core';
+// import { AppModule } from './app.module';
+// import { UsersService } from './modules/users/users.service';
+// import { Roles } from './enums/roles';
+
+// async function bootstrap() {
+//   const app = await NestFactory.createApplicationContext(AppModule);
+//   const usersService = app.get(UsersService);
+
+//   const adminData = {
+//     email: 'vaponte520@gmail.com',
+//     password: 'Admin123',
+//     role: Roles.ADMIN,
+//     name: 'Victor',
+//     lastName: 'Aponte',
+//   };
+
+//   try {
+//     const existing = await usersService.findByEmail(adminData.email);
+//     if (existing) {
+//       console.log('El usuario admin ya existe:', existing.email);
+//       console.log('Nombre:', existing.name, existing.lastName);
+//       await app.close();
+//       return;
+//     }
+
+//     const admin = await usersService.createUser(
+//       adminData.email,
+//       adminData.password,
+//       adminData.role,
+//       adminData.name,
+//       adminData.lastName,
+//     );
+
+//     console.log('USUARIO ADMIN CREADO CORRECTAMENTE');
+//     console.log('Nombre completo:', admin.name, admin.lastName);
+//     console.log('Email:', admin.email);
+//     console.log('Rol:', admin.role);
+//     console.log('ID:', admin.id);
+//   } catch (error: any) {
+//     console.error('Error creando admin:', error.message);
+//   } finally {
+//     await app.close();
+//     process.exit(0);
+//   }
+// }
+
+// bootstrap();
