@@ -1,6 +1,7 @@
 // src/modules/users/entities/user.entity.ts
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from 'typeorm';
 import { Roles } from 'src/enums/roles';
+import { Calling } from 'src/modules/callings/entities/calling.entity';
 
 @Entity()
 export class User {
@@ -27,4 +28,7 @@ export class User {
 
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   createdAt: Date;
+
+  @OneToMany(() => Calling, (calling) => calling.user)
+  callings: Calling[];
 }
