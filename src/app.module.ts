@@ -6,6 +6,7 @@ import { validate } from './config/env.config';
 import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { CallingsModule } from './modules/callings/callings.module';
+import { TopicsModule } from './modules/topics/topics.module';
 
 @Module({
   imports: [
@@ -35,6 +36,7 @@ import { CallingsModule } from './modules/callings/callings.module';
     UsersModule,
     AuthModule,
     CallingsModule,
+    TopicsModule,
   ],
 })
 export class AppModule { }
